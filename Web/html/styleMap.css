@@ -1,0 +1,46 @@
+.info_window {
+    width: 600px;
+    height: 250px;
+    padding: 15px;
+}
+
+.img_warp {
+    display: block;
+    float: right;
+    width: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.detail_location {
+   width: 350px; 
+}
+
+.detail_location h3 {
+    font-size: 35px;
+    margin: 0;
+}
+
+.detail_location h5 {
+    font-size: 20px;
+    margin-top: 5px;
+    color: #6f6f6f;
+}
+
+.detail_descp {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #000;
+}
+
+.read_more_location {
+    width: 50px;
+    height: 20px;
+    padding: 7px 20px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    background: #6f6f6f; 
+}

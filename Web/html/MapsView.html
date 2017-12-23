@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/dd48476669.js"></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    // Note: This example requires that you consent to location sharing when
+    // prompted by your browser. If you see the error "The Geolocation service
+    // failed.", it means you probably did not give permission for the browser to
+    // locate you.
+
+    var xhr = new XMLHttpRequest();
+    var reqStr = 'https://www.michlala.co.il/Classes/mysqli/infoApi/map.php';
+//    var reqStr = 'https://www.pqpq3.co.il/Classes/mysqli/infoApi/map.php';
+    xhr.open("POST", reqStr, false);
+//    xhr.send(JSON.stringify({ domain: 'www.pqpq3.co.il'}));
+    xhr.send(JSON.stringify({ domain: 'www.michlala.co.il'}));
+
+    console.log(JSON.parse(xhr.response));
+    console.log("Done Receiving points");
+
+    var mapsData = JSON.parse(xhr.response);
+
+    var map, infoWindow, infoWindow2;
+
+    function initMapSivi() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+        var geocoder = new google.maps.Geocoder();
+        mapsData.forEach(function(d) {
+            geocoder.geocode( { 'address': d.address}, function(results, status) {
+                if (status == 'OK') {
+                    console.log('Result From Google GeoLocation: ' + results[0].geometry.location);
+                    map.setCenter(results[0].geometry.location);
+
+                    var infoWindow = new google.maps.InfoWindow();
+                    infoWindow.setContent(addNewMarker(d));
+
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
+
+                    google.maps.event.addListener(map, 'click', function(){
+                        infoWindow.close(map, marker);
+                    });
+
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        });
+    }
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 12
+        });
+
+        infoWindow = new google.maps.InfoWindow;
+        infoWindow2 = new google.maps.InfoWindow;
+        var image = "http://mynac.co.za/wp-content/plugins/woocommerce-sticky-cart/images/cart.png";
+        var icon = {
+            url: image, // url
+            scaledSize: new google.maps.Size(50, 50), // scaled size
+            origin: new google.maps.Point(0,0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos1 = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                var pos2 = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                var beachMarker = new google.maps.Marker({
+                    position: {lat: position.coords.latitude, lng: position.coords.longitude},
+                    map: map,
+                    icon: icon
+                });
+
+                var beachMarker2 = new google.maps.Marker({
+                    position: {lat: position.coords.latitude, lng: position.coords.longitude},
+                    map: map,
+                    icon: icon
+                });
+                map.setCenter(pos1);
+                setInterval(function() {
+                    infoWindow.close();
+                    pos1.lat +=0.0001;
+                    infoWindow.setPosition(pos1);
+                    infoWindow.setContent('Cart 1');
+                    infoWindow.open(map);
+                    beachMarker.setPosition(pos1);
+                }, 2000);
+
+                setInterval(function() {
+                    infoWindow2.close();
+                    pos2.lat -=0.0001;
+                    infoWindow2.setPosition(pos2);
+                    infoWindow2.setContent('Cart2');
+                    infoWindow2.open(map);
+                    beachMarker2.setPosition(pos2);
+
+                }, 2000);
+//                setTimeout(function () {
+//                    infoWindow.close();
+//                },5000);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+
+    function addNewMarker(item) {
+        console.log('Address:: ' + item.address);
+        var o = item.address
+        var e = item.title
+        var t = item.image
+        var a = item.content
+        var i = item.button
+        var s = item.color;
+        return '\n      <div class="as-map-info-window">\n        ' + (t ? '<div class="as-map-info-window__img-wrap">\n        <img class="as-map-info-window__img" src="' + t + '" alt="' + e + '" />\n      </div>' : "") + '\n        <div class="as-map-info-window__main">\n          <h1 class="as-map-info-window__title" style="color: ' + s + '">' + e + '</h1>\n          <h2 class="as-map-info-window__subtitle">' + o + '</h2>\n          <div class="as-map-info-window__content">' + a + "</div>\n          " + (i.href ? '<a \n        class="as-map-info-window__btn" \n        style="background: ' + s + '" \n        href="' + i.href + '" \n        target="_blank"\n      >\n        ' + i.label + "\n      </a>" : "") + "\n        </div>\n      </div>\n    "
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Hb_jUGyWrcU3ZL06v0fC1VnajRiMVEI&callback=initMapSivi">
+</script>
+</body>
+</html>
