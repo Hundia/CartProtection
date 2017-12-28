@@ -35,7 +35,7 @@ public class CartToServerMsg extends Message {
 			 initLocalMembers();
 		}
 
-    protected final int MSG_SIZE = 44;
+    protected final int MSG_SIZE = 52;
     protected final int MSG_OPCODE = 1;
 
  /**

@@ -8,11 +8,11 @@ import java.nio.ByteOrder;
 
    public class Position {
 	// fields
-	public int Longtitude;
-	public int Latitude;
+	public double Longtitude;
+	public double Latitude;
 
        // local fields
-       private static final int SIZE = 8;
+       private static final int SIZE = 16;
        protected ByteBuffer byteBufferGet = null;
        protected ByteBuffer byteBufferSet = null;
 
@@ -56,8 +56,8 @@ import java.nio.ByteOrder;
        */
        public byte[] getData() {
               byteBufferGet.clear();
-              byteBufferGet.putInt((int) (Longtitude & 0XFFFFFFFFL));
-              byteBufferGet.putInt((int) (Latitude & 0XFFFFFFFFL));
+              byteBufferGet.putDouble(Longtitude);
+              byteBufferGet.putDouble(Latitude);
               return byteBufferGet.array();
        }
 
@@ -67,8 +67,8 @@ import java.nio.ByteOrder;
        * @param bf - ByteBuffer
        */
        public void getData(ByteBuffer bf) {
-              bf.putInt((int) (Longtitude & 0XFFFFFFFFL));
-              bf.putInt((int) (Latitude & 0XFFFFFFFFL));
+              bf.putDouble(Longtitude);
+              bf.putDouble(Latitude);
        }
 
 
@@ -90,8 +90,8 @@ import java.nio.ByteOrder;
        * @param bf - Bytebuffer to set
        */
        public void setData(ByteBuffer bf, int pos) {
-              Longtitude = (int) (0xFFFFFFFFL & bf.getInt(pos + 0));
-              Latitude = (int) (0xFFFFFFFFL & bf.getInt(pos + 4));
+              Longtitude = bf.getDouble(pos + 0);
+              Latitude = bf.getDouble(pos + 8);
        }
 
 }

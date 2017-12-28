@@ -5,7 +5,6 @@
 package comm.icd;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import comm.icd.Header;
 
 public abstract class Message {
 
