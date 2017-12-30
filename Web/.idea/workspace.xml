@@ -18,13 +18,13 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state relative-caret-position="-119">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#769#1471#0" expanded="false" />
                 <element signature="e#3259#5924#0" expanded="false" />
-                <marker date="1514653794025" expanded="true" signature="6507:6514" ph="..." />
-                <marker date="1514653794025" expanded="true" signature="6763:6775" ph="..." />
+                <marker date="1514659624253" expanded="true" signature="6507:6514" ph="..." />
+                <marker date="1514659624253" expanded="true" signature="6763:6775" ph="..." />
               </folding>
             </state>
           </provider>
@@ -298,12 +298,12 @@
       <workItem from="1511608369130" duration="44000" />
       <workItem from="1511617671396" duration="1664000" />
       <workItem from="1512827920192" duration="620000" />
-      <workItem from="1514125434430" duration="4722000" />
+      <workItem from="1514125434430" duration="5429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28889000" />
+    <option name="totallyTimeSpent" value="29596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -676,13 +676,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+        <state relative-caret-position="-119">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#769#1471#0" expanded="false" />
             <element signature="e#3259#5924#0" expanded="false" />
-            <marker date="1514653794025" expanded="true" signature="6507:6514" ph="..." />
-            <marker date="1514653794025" expanded="true" signature="6763:6775" ph="..." />
+            <marker date="1514659624253" expanded="true" signature="6507:6514" ph="..." />
+            <marker date="1514659624253" expanded="true" signature="6763:6775" ph="..." />
           </folding>
         </state>
       </provider>

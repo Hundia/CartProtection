@@ -13,6 +13,7 @@ public class CartToServerMsg extends Message {
 
     @Override
     public String toString() {
+        sb.setLength(0);
         sb.append("General: ID = " + general.ID);
         sb.append(" General: Owner = " + general.Owner);
         sb.append(" General: Uptime = " + general.Uptime);

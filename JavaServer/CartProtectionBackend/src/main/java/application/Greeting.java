@@ -2,28 +2,33 @@ package application;
 
 public class Greeting {
 
-    private final long id;
-    private final String content;
+    private final int seq;
+    private final int batteryPercentage;
+    private final int batteryConnected;
     private final double longtitude;
     private final double latitude;
     private final int cartId;
 
-    public Greeting(long id, String content, double longtitude, double latitude, int cartId) {
-        this.id = id;
-        this.content = content;
+    public Greeting(int seq, int batteryPercentage, int batteryConnected, double longtitude, double latitude, int cartId) {
+        this.seq = seq;
+        this.batteryPercentage = batteryPercentage;
+        this.batteryConnected = batteryConnected;
         this.longtitude = longtitude;
         this.latitude = latitude;
         this.cartId = cartId;
     }
 
-    public long getId() {
-        return id;
+    public int getSeq() {
+        return seq;
     }
 
-    public String getContent() {
-        return content;
+    public int getBatteryPercentage() {
+        return batteryPercentage;
     }
 
+    public int getBatteryConnected() {
+        return batteryConnected;
+    }
 
     public double getLongtitude() {
         return longtitude;

@@ -8,8 +8,15 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.DatagramChannel;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
 public class UdpServer {
+
+    private static Queue<CartToServerMsg> mMsgBQ = new ArrayDeque<>(100);
+    private static List<CartToServerMsg> msgsLst = new ArrayList<CartToServerMsg>(100);
 
     //  UDP Datagram socket
     DatagramChannel channel;
@@ -49,6 +56,17 @@ public class UdpServer {
         return true;
     }
 
+    public static synchronized List<CartToServerMsg> getLatestMessagesFromDevices() {
+        //  Drain up the message queue into the messages list
+        while(!mMsgBQ.isEmpty()) {
+            msgsLst.add(mMsgBQ.remove());
+        }
+        return msgsLst;
+    }
+
+    private synchronized void addMsgToQueue(CartToServerMsg msg) {
+        mMsgBQ.add(msg);
+    }
     /**
      *
      */
@@ -73,8 +91,9 @@ public class UdpServer {
                 msgFromCart.setData(buf,0);
 
                 //  Debug print the sender IP and the msg received
-                logger.debug("Received msg from: " + remoteAddress.getHostName() + "\n" + msgFromCart.toString());
+//                logger.debug("Received msg from: " + remoteAddress.getHostName() + "\n" + msgFromCart.toString());
 
+                addMsgToQueue(msgFromCart);
             } catch (IOException e) {
                 logger.error(e);
             }
