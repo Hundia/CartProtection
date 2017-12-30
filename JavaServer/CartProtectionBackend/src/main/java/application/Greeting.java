@@ -6,12 +6,14 @@ public class Greeting {
     private final String content;
     private final double longtitude;
     private final double latitude;
+    private final int cartId;
 
-    public Greeting(long id, String content, double longtitude, double latitude) {
+    public Greeting(long id, String content, double longtitude, double latitude, int cartId) {
         this.id = id;
         this.content = content;
         this.longtitude = longtitude;
         this.latitude = latitude;
+        this.cartId = cartId;
     }
 
     public long getId() {
@@ -31,4 +33,7 @@ public class Greeting {
         return latitude;
     }
 
+    public int getCartId() {
+        return cartId;
+    }
 }

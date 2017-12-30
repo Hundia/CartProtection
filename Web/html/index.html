@@ -23,58 +23,98 @@
 <body>
 <div id="map"></div>
 <script>
-    // Note: This example requires that you consent to location sharing when
-    // prompted by your browser. If you see the error "The Geolocation service
-    // failed.", it means you probably did not give permission for the browser to
-    // locate you.
 
-    var xhr = new XMLHttpRequest();
-    var reqStr = '127.0.0.1:';
-//    var reqStr = 'https://www.pqpq3.co.il/Classes/mysqli/infoApi/map.php';
-    xhr.open("POST", reqStr, false);
-//    xhr.send(JSON.stringify({ domain: 'www.pqpq3.co.il'}));
-    xhr.send(JSON.stringify({ domain: 'www.michlala.co.il'}));
+    var geocoder;
+    var mapsData;
+    var requestLocationsFromServer = false;
 
-    console.log(JSON.parse(xhr.response));
-    console.log("Done Receiving points");
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
 
-    var mapsData = JSON.parse(xhr.response);
+        if ("withCredentials" in xhr) {
+
+            // Check if the XMLHttpRequest object has a "withCredentials" property.
+            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+            xhr.open(method, url, true);
+
+        } else if (typeof XDomainRequest != "undefined") {
+
+            // Otherwise, check if XDomainRequest.
+            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+
+        } else {
+
+            // Otherwise, CORS is not supported by the browser.
+            xhr = null;
+
+        }
+        return xhr;
+    }
+
+
+
+    setInterval(function() {
+        if(requestLocationsFromServer) {
+            var xhr = createCORSRequest('GET', "http://localhost:8080/greeting");
+            if (!xhr) {
+                throw new Error('CORS not supported');
+            }
+
+            xhr.onload = function() {
+                var responseText = xhr.responseText;
+                console.log(responseText);
+                mapsData = JSON.parse(xhr.response);
+                updateGUI(mapsData);
+            };
+
+            xhr.onerror = function() {
+                console.log('There was an error!');
+            };
+            xhr.send();
+        }
+    }, 1000);
+
 
     var map, infoWindow, infoWindow2;
 
+
+    function updateGUI(carts) {
+
+        carts.forEach(function(data) {
+            console.log('Received data: latitude: ' + data.latitude + ' lon: ' + data.longtitude + ' cartId: ' + data.cartId);
+            var pos = {
+                lat: data.latitude,
+                lng: data.longtitude
+            };
+
+            map.setCenter(pos);
+
+            //var infoWindow = new google.maps.InfoWindow();
+            //infoWindow.setContent(addNewMarker(d));
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: pos
+            });
+
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
+
+            google.maps.event.addListener(map, 'click', function(){
+                infoWindow.close(map, marker);
+            });
+        });
+    }
     function initMapSivi() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
             zoom: 8
         });
-        var geocoder = new google.maps.Geocoder();
-        mapsData.forEach(function(d) {
-            geocoder.geocode( { 'address': d.address}, function(results, status) {
-                if (status == 'OK') {
-                    console.log('Result From Google GeoLocation: ' + results[0].geometry.location);
-                    map.setCenter(results[0].geometry.location);
 
-                    var infoWindow = new google.maps.InfoWindow();
-                    infoWindow.setContent(addNewMarker(d));
-
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-
-                    marker.addListener('click', function() {
-                        infoWindow.open(map, marker);
-                    });
-
-                    google.maps.event.addListener(map, 'click', function(){
-                        infoWindow.close(map, marker);
-                    });
-
-                } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
-        });
+        requestLocationsFromServer = true;
     }
 
     function initMap() {
@@ -118,24 +158,24 @@
                     icon: icon
                 });
                 map.setCenter(pos1);
-                setInterval(function() {
-                    infoWindow.close();
-                    pos1.lat +=0.0001;
-                    infoWindow.setPosition(pos1);
-                    infoWindow.setContent('Cart 1');
-                    infoWindow.open(map);
-                    beachMarker.setPosition(pos1);
-                }, 2000);
-
-                setInterval(function() {
-                    infoWindow2.close();
-                    pos2.lat -=0.0001;
-                    infoWindow2.setPosition(pos2);
-                    infoWindow2.setContent('Cart2');
-                    infoWindow2.open(map);
-                    beachMarker2.setPosition(pos2);
-
-                }, 2000);
+//                setInterval(function() {
+//                    infoWindow.close();
+//                    pos1.lat +=0.0001;
+//                    infoWindow.setPosition(pos1);
+//                    infoWindow.setContent('Cart 1');
+//                    infoWindow.open(map);
+//                    beachMarker.setPosition(pos1);
+//                }, 2000);
+//
+//                setInterval(function() {
+//                    infoWindow2.close();
+//                    pos2.lat -=0.0001;
+//                    infoWindow2.setPosition(pos2);
+//                    infoWindow2.setContent('Cart2');
+//                    infoWindow2.open(map);
+//                    beachMarker2.setPosition(pos2);
+//
+//                }, 2000);
 //                setTimeout(function () {
 //                    infoWindow.close();
 //                },5000);
