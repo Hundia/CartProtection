@@ -1,7 +1,6 @@
 package comm.udp;
 
 import comm.icd.CartToServerMsg;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.DatagramChannel;
