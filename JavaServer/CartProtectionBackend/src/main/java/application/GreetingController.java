@@ -19,10 +19,7 @@ public class GreetingController {
     @RequestMapping("/greeting")
     public List<Greeting> greeting(@RequestParam(value="name", defaultValue="World") String name) {
         List<Greeting> gtr = new ArrayList<Greeting>();
-//        for (Greeting gr : gtr) {
-//            gr = new  Greeting(counter.incrementAndGet(),
-//                    String.format(template, name), longtitude, latitude);
-//        }
+
         gtr.add(new  Greeting(counter.incrementAndGet(),
                 String.format(template, name), longtitude, latitude));
 
