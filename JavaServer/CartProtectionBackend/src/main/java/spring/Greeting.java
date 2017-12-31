@@ -1,4 +1,4 @@
-package application;
+package spring;
 
 public class Greeting {
 

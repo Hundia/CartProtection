@@ -1,14 +1,9 @@
-application\Greeting.class
 comm\icd\Position.class
 comm\icd\CartToServerMsg.class
 comm\icd\Header.class
 comm\icd\Message.class
-application\Application.class
-application\Application$1.class
 comm\icd\Battery.class
 comm\udp\UdpServer.class
-application\GreetingController.class
 comm\icd\General.class
 comm\icd\Message$ByteBufferType.class
 comm\udp\UdpTestClient.class
-comm\http\JsonServer.class

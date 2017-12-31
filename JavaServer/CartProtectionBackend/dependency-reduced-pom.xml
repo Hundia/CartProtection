@@ -24,7 +24,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>application.Application</mainClass>
+              <mainClass>spring.Application</mainClass>
             </manifest>
           </archive>
         </configuration>

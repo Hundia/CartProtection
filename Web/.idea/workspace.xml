@@ -18,13 +18,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="299">
+              <caret line="134" column="35" lean-forward="false" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
               <folding>
                 <element signature="e#769#1471#0" expanded="false" />
-                <element signature="e#3259#5924#0" expanded="false" />
-                <marker date="1514659624253" expanded="true" signature="6507:6514" ph="..." />
-                <marker date="1514659624253" expanded="true" signature="6763:6775" ph="..." />
+                <marker date="1514739272641" expanded="true" signature="7634:7641" ph="..." />
+                <marker date="1514739272641" expanded="true" signature="7890:7902" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playground.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/playground.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="138" column="5" lean-forward="true" selection-start-line="81" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
+              <folding>
+                <element signature="e#4131#4332#0" expanded="false" />
+                <marker date="1514734794585" expanded="true" signature="7694:7701" ph="..." />
+                <marker date="1514734794585" expanded="true" signature="7950:7962" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playground.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/playground.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -45,8 +70,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -93,6 +118,8 @@
         <option value="D:/sivan/אתריקס/18.11/MapsView.html" />
         <option value="$PROJECT_DIR$/html/tmp.html" />
         <option value="$PROJECT_DIR$/html/MapsView.html" />
+        <option value="$PROJECT_DIR$/html/playground.js" />
+        <option value="$PROJECT_DIR$/html/playground.html" />
         <option value="$PROJECT_DIR$/html/index.html" />
       </list>
     </option>
@@ -168,6 +195,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dev\CartProtection\Web\html" />
       <recent name="D:\Dev\CartProtector\NodeServer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -187,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.MapsView.html">
+  <component name="RunManager" selected="Node.js.playground.js">
     <configuration default="false" name="Index.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/Index.js" working-dir="$PROJECT_DIR$/NodeServer">
       <method />
     </configuration>
@@ -195,6 +223,9 @@
       <method />
     </configuration>
     <configuration default="false" name="MapsView.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63344/Web/html/MapsView.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="playground.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="playground.js" working-dir="$PROJECT_DIR$/html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -263,16 +294,18 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Node.js.Index.js" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.tmp.js" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.MapsView.html" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.playground.js" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.MapsView.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.tmp.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.Index.js" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.playground.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.MapsView.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.tmp.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.Index.js" />
       </list>
     </recent_temporary>
   </component>
@@ -298,12 +331,12 @@
       <workItem from="1511608369130" duration="44000" />
       <workItem from="1511617671396" duration="1664000" />
       <workItem from="1512827920192" duration="620000" />
-      <workItem from="1514125434430" duration="5429000" />
+      <workItem from="1514125434430" duration="10042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29596000" />
+    <option name="totallyTimeSpent" value="34209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -313,11 +346,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25476992" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25460455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -335,7 +368,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -625,14 +658,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/אצפ2.html" />
-    <entry file="file://$PROJECT_DIR$/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/tmp.html" />
     <entry file="file://$PROJECT_DIR$/html/InfoWindow.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -674,15 +699,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/playground.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/playground.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="138" column="5" lean-forward="true" selection-start-line="81" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <element signature="e#4131#4332#0" expanded="false" />
+            <marker date="1514734794585" expanded="true" signature="7694:7701" ph="..." />
+            <marker date="1514734794585" expanded="true" signature="7950:7962" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="299">
+          <caret line="134" column="35" lean-forward="false" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
           <folding>
             <element signature="e#769#1471#0" expanded="false" />
-            <element signature="e#3259#5924#0" expanded="false" />
-            <marker date="1514659624253" expanded="true" signature="6507:6514" ph="..." />
-            <marker date="1514659624253" expanded="true" signature="6763:6775" ph="..." />
+            <marker date="1514739272641" expanded="true" signature="7634:7641" ph="..." />
+            <marker date="1514739272641" expanded="true" signature="7890:7902" ph="..." />
           </folding>
         </state>
       </provider>

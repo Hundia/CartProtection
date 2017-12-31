@@ -89,7 +89,7 @@
             //carts.push({'marker':beachMarker,'id':2})
             var cartIndex = -1;
             //  Check if cart exists
-            for(var i = 0; i < cartsList.length; i++)
+            for(var i = 0; i < restaurants.length; i++)
             {
                 if(cartsList[i].id == data.cartId)
                 {
@@ -122,7 +122,7 @@
                     infoWindow.close(map, marker);
                 });
 
-                cartsList.push({'marker':marker,'id':data.cartId});
+                cartsList.push({'marker':beachMarker,'id':data.cartId});
             }
             //  Else, its an existing one and i can rely on cartIndex to hold its position
             else {
@@ -132,7 +132,6 @@
                     lng: data.longtitude
                 };
 
-                map.setCenter(pos);
                 cartsList[cartIndex].marker.setPosition(pos);
             }
 
@@ -188,6 +187,9 @@
                     icon: icon
                 });
                 map.setCenter(pos1);
+
+                cartsList.push(beachMarker);
+                console.log(cartsList[0]);
 //                setInterval(function() {
 //                    infoWindow.close();
 //                    pos1.lat +=0.0001;
@@ -238,7 +240,7 @@
     }
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Hb_jUGyWrcU3ZL06v0fC1VnajRiMVEI&callback=initMapSivi">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Hb_jUGyWrcU3ZL06v0fC1VnajRiMVEI&callback=initMap">
 </script>
 </body>
 </html>
