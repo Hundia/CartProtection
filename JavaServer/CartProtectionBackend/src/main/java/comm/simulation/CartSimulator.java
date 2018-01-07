@@ -2,7 +2,6 @@ package comm.simulation;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import comm.icd.CartToServerMsg;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.DatagramChannel;
@@ -10,9 +9,15 @@ import java.nio.channels.DatagramChannel;
 public abstract class CartSimulator implements Runnable{
 
     int cartID = -1;
+    PerimeterUtility pu = null;
 
-    public CartSimulator(int cartID) {
+    public CartSimulator(int cartID, Coordinate[] perimeter) {
+        //  Set cart id
         this.cartID =cartID;
+
+        //  Set up perimeter utility
+        pu = new PerimeterUtility(perimeter);
+
     }
 
     @Override
@@ -39,14 +44,6 @@ public abstract class CartSimulator implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-
-            //  Update the position
-            //  Rami levy haifa lon lat -
-            //  Right: 32.818971, 35.053503
-            //  Left:  32.818775, 35.053329
-            //  Up:    32.818441, 35.053820
-            //  Down:  32.818646, 35.054005
 
             Coordinate cor = getNextPosition();
             msgFromCart.pos.Latitude = cor.x;

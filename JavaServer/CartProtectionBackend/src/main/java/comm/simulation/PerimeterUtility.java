@@ -4,7 +4,7 @@ import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.shape.random.RandomPointsBuilder;
 import org.geotools.geometry.jts.JTSFactoryFinder;
 
-public class PerimiterUtility {
+public class PerimeterUtility {
 
     //  Geo location stuff using JTS and geo tools libraries
     Polygon poly = null;
@@ -16,7 +16,7 @@ public class PerimiterUtility {
      * must be the safe, will build up a this class that give's perimiter functionality
      * @param perimiterCoordinates
      */
-    public PerimiterUtility(Coordinate[] perimiterCoordinates) {
+    public PerimeterUtility(Coordinate[] perimiterCoordinates) {
         setUpPerimiter(perimiterCoordinates);
     }
 
@@ -38,11 +38,27 @@ public class PerimiterUtility {
         rpb.setExtent(poly);
     }
 
+    /**
+     * Gives a random position inside the perimeter
+     * @return
+     */
     public Coordinate getRandomPositionInPerimiter() {
-
+        rpb.setNumPoints(1);
         Geometry g = rpb.getGeometry();
         Coordinate[] cr =  g.getCoordinates();
         return cr[0];
+    }
+
+    /**
+     * Gives a random position inside the perimeter
+     * @return
+     */
+    public Coordinate[] getMultipleCoordinates(int numOfCoordinates) {
+        //  Number of points we want
+        rpb.setNumPoints(numOfCoordinates);
+        Geometry g = rpb.getGeometry();
+        Coordinate[] cr =  g.getCoordinates();
+        return cr;
     }
     /**
      * Checks if a given coordinate is inside our perimiter or outside

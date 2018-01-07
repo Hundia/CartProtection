@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: comm.simulation.UdpCartSimulator
+Main-Class: comm.simulation.CartsSimulation
 
