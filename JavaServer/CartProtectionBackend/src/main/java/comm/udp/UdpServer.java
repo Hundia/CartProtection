@@ -58,13 +58,16 @@ public class UdpServer {
 
     public static synchronized List<CartToServerMsg> getLatestMessagesFromDevices() {
         //  Drain up the message queue into the messages list
+        //logger.debug("Starting cleaning process");
+        msgsLst.clear();
         while(!mMsgBQ.isEmpty()) {
             msgsLst.add(mMsgBQ.remove());
         }
+        //logger.debug("Finshed cleaning process");
         return msgsLst;
     }
 
-    private synchronized void addMsgToQueue(CartToServerMsg msg) {
+    private static synchronized void addMsgToQueue(CartToServerMsg msg) {
         mMsgBQ.add(msg);
     }
     /**
@@ -88,12 +91,15 @@ public class UdpServer {
 
                 buf.rewind();
                 //  Set the data received in the designated structure
-                msgFromCart.setData(buf,0);
+                //  TODO: Use messages pool for not allocating a new message every time i get a new msg, the GC will work around the clock here for no good reason.
+                CartToServerMsg msgFromCartToQueue = new CartToServerMsg();
+                msgFromCartToQueue.setData(buf,0);
 
                 //  Debug print the sender IP and the msg received
-//                logger.debug("Received msg from: " + remoteAddress.getHostName() + "\n" + msgFromCart.toString());
+                logger.debug("Id Received: " + msgFromCartToQueue.general.ID);
 
-                addMsgToQueue(msgFromCart);
+                addMsgToQueue(msgFromCartToQueue);
+
             } catch (IOException e) {
                 logger.error(e);
             }
@@ -102,8 +108,22 @@ public class UdpServer {
     }
 
     public static void main(String[] args) {
-        UdpServer srv = new UdpServer("eth0", 5555);
-        srv.init();
-        srv.start();
+//        UdpServer srv = new UdpServer("eth0", 5555);
+//        srv.init();
+//        srv.start();
+        for (int i = 0; i < 3; i++) {
+            CartToServerMsg msgFromCart = new CartToServerMsg();
+            msgFromCart.pos.Longtitude = 10;
+            msgFromCart.pos.Latitude = 20;
+            msgFromCart.general.ID = i;
+            UdpServer.addMsgToQueue(msgFromCart);
+        }
+
+        List<CartToServerMsg> lst = UdpServer.getLatestMessagesFromDevices();
+        for (CartToServerMsg msg: lst
+             ) {
+            System.out.println(msg.toString());
+        }
+        System.out.println(lst);
     }
 }

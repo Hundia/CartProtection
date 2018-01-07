@@ -19,23 +19,25 @@ public class GreetingController {
     private int cartId = 1;
     private int batteryPercentage = 1;
     private int isBatteryConnected = 0;
+    private boolean enableDebugPrints = true;
     //  List to be returned
     List<Greeting> gtr = new ArrayList<Greeting>();
     final static Logger logger = Logger.getLogger(GreetingController.class);
 
     @CrossOrigin(origins = "http://127.0.0.1:3000")
     @GetMapping("/greeting")
-    public List<Greeting> greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public List<Greeting> greeting(@RequestParam(value="reqid", defaultValue="World") String reqid) {
 
         gtr.clear();
-
+        logger.debug("Got request from web..! req id: " + reqid);
         List<CartToServerMsg> msgsList = UdpServer.getLatestMessagesFromDevices();
-        logger.debug("!!!!!!");
         for (CartToServerMsg msg: msgsList)
         {
-            logger.debug("--------------------------------------------------------------------------");
-            logger.debug(msg.toString());
-            logger.debug("--------------------------------------------------------------------------");
+            if(enableDebugPrints) {
+                logger.debug("--------------------------------------------------------------------------");
+                logger.debug("Id Sent: " + msg.general.ID);
+                logger.debug("--------------------------------------------------------------------------");
+            }
             cartId = msg.general.ID;
             batteryPercentage = msg.health.Percentage;
             isBatteryConnected = msg.health.Status;
@@ -46,7 +48,6 @@ public class GreetingController {
                     batteryPercentage, isBatteryConnected, longitude, latitude, cartId));
         }
         msgsList.clear();
-        logger.debug("!!!!!!");
         return gtr;
     }
 }

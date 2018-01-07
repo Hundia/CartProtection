@@ -54,18 +54,21 @@
     }
 
 
-
+    var reqId = 0;
     setInterval(function() {
+
         if(requestLocationsFromServer) {
-            var xhr = createCORSRequest('GET', "http://localhost:8080/greeting");
+            reqId+=1;
+            var xhr = createCORSRequest('GET', "http://127.0.0.1:8080/greeting?reqid=" + reqId);
             if (!xhr) {
                 throw new Error('CORS not supported');
             }
 
             xhr.onload = function() {
                 var responseText = xhr.responseText;
-                console.log(responseText);
+                //console.log(responseText);
                 mapsData = JSON.parse(xhr.response);
+                console.log(mapsData);
                 updateGUI(mapsData);
             };
 
@@ -74,19 +77,47 @@
             };
             xhr.send();
         }
-    }, 4000);
+    }, 5000);
 
 
     var map, infoWindow, infoWindow2;
 
     var cartsList = [];
+    var cartListTimeStamps = [];
+    var cartsToBeRemoved = {};
+
+    //  Function ment to be called periodically every X sec
+    function clearUnupdatedCarts() {
+        var currentTT = new Date.getTime();
+        for(var cartId in cartListTimeStamps) {
+            var cartTTPlus20Sec = cartListTimeStamps[cartId] + 1000*20;
+            if(cartTTPlus20Sec < currentTT) {
+                //  Find the cart index in cartsList
+                //  TODO - Move to function the searching of the index
+                var cartIndex = -1;
+                //  Check if cart exists
+                for(var i = 0; i < cartsList.length; i++)
+                {
+                    if(cartsList[i].id == cartId)
+                    {
+                        cartIndex = i;
+                    }
+                }
+                //  Remove the element using splice
+                cartsList.splice(cartIndex,1);
+
+            }
+        }
+    }
 
     function updateGUI(carts) {
-
+        //  For each cart data received
         carts.forEach(function(data) {
-            console.log('Received data: latitude: ' + data.latitude + ' lon: ' + data.longtitude + ' cartId: ' + data.cartId);
+            //  Update the TT on the cart list time stamps data structure
+            cartListTimeStamps[data.cartId] = new Date().getTime();
+//            cartListTimeStamps.push({'id':data.cartId ,'TimeTag':new Date().getTime()});
 
-            //carts.push({'marker':beachMarker,'id':2})
+            console.log('Received data: latitude: ' + data.latitude + ' lon: ' + data.longtitude + ' cartId: ' + data.cartId);
             var cartIndex = -1;
             //  Check if cart exists
             for(var i = 0; i < cartsList.length; i++)
@@ -104,7 +135,7 @@
                     lng: data.longtitude
                 };
 
-                map.setCenter(pos);
+                //map.setCenter(pos);
 
                 //var infoWindow = new google.maps.InfoWindow();
                 //infoWindow.setContent(addNewMarker(d));
@@ -114,12 +145,12 @@
                     position: pos
                 });
 
-                marker.addListener('click', function() {
-                    infoWindow.open(map, marker);
-                });
+//                marker.addListener('click', function() {
+//                    infoWindow.open(map, marker);
+//                });
 
                 google.maps.event.addListener(map, 'click', function(){
-                    infoWindow.close(map, marker);
+                   // infoWindow.close(map, marker);
                 });
 
                 cartsList.push({'marker':marker,'id':data.cartId});
@@ -132,7 +163,8 @@
                     lng: data.longtitude
                 };
 
-                map.setCenter(pos);
+//                map.setCenter(pos);
+//                map.setZoom(16);
                 cartsList[cartIndex].marker.setPosition(pos);
             }
 
@@ -140,8 +172,8 @@
     }
     function initMapSivi() {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            center: {lat: 32.81866418203035, lng: 35.05366517443126},
+            zoom: 20
         });
 
         requestLocationsFromServer = true;
