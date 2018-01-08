@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7140225a-7f00-439c-b1e3-57608a4274da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/CartSimulator.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/CartSimulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/CartsSimulation.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/CartsSimulation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/LineTravelingCartSimulator.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/LineTravelingCartSimulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/PerimeterUtility.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/simulation/PerimeterUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,12 +20,12 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+            <state relative-caret-position="234">
+              <caret line="142" column="116" lean-forward="false" selection-start-line="142" selection-start-column="116" selection-end-line="142" selection-end-column="116" />
               <folding>
                 <element signature="e#769#1471#0" expanded="false" />
-                <marker date="1515445300284" expanded="true" signature="8945:8952" ph="..." />
-                <marker date="1515445300284" expanded="true" signature="9201:9213" ph="..." />
+                <marker date="1515446512666" expanded="true" signature="9310:9317" ph="..." />
+                <marker date="1515446512666" expanded="true" signature="9566:9578" ph="..." />
               </folding>
             </state>
           </provider>
@@ -203,6 +197,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -216,13 +228,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\CartProtection\Web\html" />
+      <recent name="D:\Dev\CartProtector" />
+      <recent name="D:\Dev\CartProtector\html" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dev\CartProtection\Web\html" />
       <recent name="D:\Dev\CartProtector\NodeServer" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dev\CartProtector" />
-      <recent name="D:\Dev\CartProtector\html" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,12 +368,12 @@
       <workItem from="1512827920192" duration="620000" />
       <workItem from="1514125434430" duration="12264000" />
       <workItem from="1514998716462" duration="5247000" />
-      <workItem from="1515353945152" duration="1297000" />
+      <workItem from="1515353945152" duration="2509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42975000" />
+    <option name="totallyTimeSpent" value="44187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1546" height="830" extended-state="0" />
@@ -368,7 +381,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16710876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35868007" sideWeight="0.5021075" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35868007" sideWeight="0.5021075" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18309858" sideWeight="0.49789253" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -639,12 +652,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+        <state relative-caret-position="234">
+          <caret line="142" column="116" lean-forward="false" selection-start-line="142" selection-start-column="116" selection-end-line="142" selection-end-column="116" />
           <folding>
             <element signature="e#769#1471#0" expanded="false" />
-            <marker date="1515445300284" expanded="true" signature="8945:8952" ph="..." />
-            <marker date="1515445300284" expanded="true" signature="9201:9213" ph="..." />
+            <marker date="1515446512666" expanded="true" signature="9310:9317" ph="..." />
+            <marker date="1515446512666" expanded="true" signature="9566:9578" ph="..." />
           </folding>
         </state>
       </provider>

@@ -140,10 +140,18 @@
                 //var infoWindow = new google.maps.InfoWindow();
                 //infoWindow.setContent(addNewMarker(d));
 
-                var marker = new google.maps.Marker({
+                //  Icon from: https://www.flaticon.com/free-icon/shopping-cart_263142#term=online&page=1&position=2
+                var image = './images/shopping-cart.png';
+                var beachMarker = new google.maps.Marker({
                     map: map,
-                    position: pos
+                    position: pos,
+                    icon: image
                 });
+
+//                var marker = new google.maps.Marker({
+//                    map: map,
+//                    position: pos
+//                });
 
 //                marker.addListener('click', function() {
 //                    infoWindow.open(map, marker);
@@ -153,7 +161,7 @@
                    // infoWindow.close(map, marker);
                 });
 
-                cartsList.push({'marker':marker,'id':data.cartId});
+                cartsList.push({'marker':beachMarker,'id':data.cartId});
             }
             //  Else, its an existing one and i can rely on cartIndex to hold its position
             else {
