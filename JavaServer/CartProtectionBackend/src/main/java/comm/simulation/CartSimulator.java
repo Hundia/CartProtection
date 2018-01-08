@@ -40,7 +40,7 @@ public abstract class CartSimulator implements Runnable{
 
         while(true) {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

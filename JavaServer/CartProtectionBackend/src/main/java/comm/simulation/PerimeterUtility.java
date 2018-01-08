@@ -60,6 +60,18 @@ public class PerimeterUtility {
         Coordinate[] cr =  g.getCoordinates();
         return cr;
     }
+
+    public Coordinate[] getPointsOnLineWithInterval(Coordinate lineStart, Coordinate lineEnd, int numOfPoints) {
+        //  Number of points we want
+        Coordinate[] cords = new Coordinate[numOfPoints];
+        double interval = (lineEnd.y - lineStart.y)/numOfPoints;
+
+        for (int i = 0; i < numOfPoints; i++) {
+            cords[i] = new Coordinate(lineStart.x, lineStart.y + interval*i);
+        }
+
+        return cords;
+    }
     /**
      * Checks if a given coordinate is inside our perimiter or outside
      * @param cor
