@@ -1,6 +1,9 @@
 package comm.udp;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Location;
 import comm.icd.CartToServerMsg;
+import comm.simulation.PerimeterUtility;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -17,7 +20,8 @@ public class UdpServer {
 
     private static Queue<CartToServerMsg> mMsgBQ = new ArrayDeque<>(100);
     private static List<CartToServerMsg> msgsLst = new ArrayList<CartToServerMsg>(100);
-
+    private final PerimeterUtility pu = null;
+    private Coordinate cartLocation = new Coordinate();
     //  UDP Datagram socket
     DatagramChannel channel;
 
@@ -28,13 +32,16 @@ public class UdpServer {
     //  Log4j
     final static Logger logger = Logger.getLogger(UdpServer.class);
     /**
-     *
-     * @param physicalInterface
+     *  @param physicalInterface
      * @param port
+     * @param ramiLevyPerimeter
      */
-    public UdpServer (String physicalInterface, int port) {
+    public UdpServer(String physicalInterface, int port, Coordinate[] ramiLevyPerimeter) {
         this.physicalInterface = physicalInterface;
         bindingPort = port;
+
+        //  Set up perimeter utility
+        pu = new PerimeterUtility(ramiLevyPerimeter);
     }
 
     /**
@@ -98,6 +105,15 @@ public class UdpServer {
                 //  Debug print the sender IP and the msg received
                 logger.debug("Id Received: " + msgFromCartToQueue.general.ID);
 
+                //  Update the perimeter status of the cart
+                cartLocation.x = msgFromCart.pos.Latitude;
+                cartLocation.y = msgFromCart.pos.Longtitude;
+                if(pu.isInsidePerimiter(cartLocation)) {
+                    msgFromCart.isInsidePerimeter = true;
+                }
+                else {
+                    msgFromCart.isInsidePerimeter = false;
+                }
                 addMsgToQueue(msgFromCartToQueue);
 
             } catch (IOException e) {
@@ -111,19 +127,19 @@ public class UdpServer {
 //        UdpServer srv = new UdpServer("eth0", 5555);
 //        srv.init();
 //        srv.start();
-        for (int i = 0; i < 3; i++) {
-            CartToServerMsg msgFromCart = new CartToServerMsg();
-            msgFromCart.pos.Longtitude = 10;
-            msgFromCart.pos.Latitude = 20;
-            msgFromCart.general.ID = i;
-            UdpServer.addMsgToQueue(msgFromCart);
-        }
-
-        List<CartToServerMsg> lst = UdpServer.getLatestMessagesFromDevices();
-        for (CartToServerMsg msg: lst
-             ) {
-            System.out.println(msg.toString());
-        }
-        System.out.println(lst);
+//        for (int i = 0; i < 3; i++) {
+//            CartToServerMsg msgFromCart = new CartToServerMsg();
+//            msgFromCart.pos.Longtitude = 10;
+//            msgFromCart.pos.Latitude = 20;
+//            msgFromCart.general.ID = i;
+//            UdpServer.addMsgToQueue(msgFromCart);
+//        }
+//
+//        List<CartToServerMsg> lst = UdpServer.getLatestMessagesFromDevices();
+//        for (CartToServerMsg msg: lst
+//             ) {
+//            System.out.println(msg.toString());
+//        }
+//        System.out.println(lst);
     }
 }

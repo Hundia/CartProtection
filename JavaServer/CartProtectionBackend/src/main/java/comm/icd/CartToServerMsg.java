@@ -8,7 +8,7 @@ import java.nio.ByteOrder;
 
 public class CartToServerMsg extends Message {
 
-
+    public boolean isInsidePerimeter = true;
     StringBuilder sb = new StringBuilder();
 
     @Override

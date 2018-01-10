@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7140225a-7f00-439c-b1e3-57608a4274da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/icd/CartToServerMsg.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/icd/CartToServerMsg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/udp/UdpServer.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/comm/udp/UdpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/spring/Application.java" afterPath="$PROJECT_DIR$/../JavaServer/CartProtectionBackend/src/main/java/spring/Application.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -148,7 +152,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
+    <option name="x" value="-7" />
     <option name="width" value="1546" />
     <option name="height" value="830" />
   </component>
@@ -368,16 +372,15 @@
       <workItem from="1512827920192" duration="620000" />
       <workItem from="1514125434430" duration="12264000" />
       <workItem from="1514998716462" duration="5247000" />
-      <workItem from="1515353945152" duration="2509000" />
+      <workItem from="1515353945152" duration="3108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44187000" />
+    <option name="totallyTimeSpent" value="44786000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1546" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1546" height="830" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16710876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
