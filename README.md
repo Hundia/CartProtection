@@ -20,18 +20,16 @@ You need to have maven installed, NodeJs (With static-server installed as global
 For each of the three components (beside the android one which you just need to install the APK for), Open a terminal and run the process.
 
 ### Backend Server
-1. Backend server
-cd /JavaServer/CartProtectionBackend/target/
-java -jar CartProtectionBackend-1.0-SNAPSHOT.jar
+1. cd /JavaServer/CartProtectionBackend/target/
+2. java -jar CartProtectionBackend-1.0-SNAPSHOT.jar
 
 ### Web server
-2. Web Server
-cd /Web/html
-static-server
+1. cd /Web/html
+2. static-server
 
 ### Carts simulation
-cd /JavaServer/CartProtectionBackend/target/
-java -jar CartsSimulation-1.0-SNAPSHOT.jar
+1. cd /JavaServer/CartProtectionBackend/target/
+2. java -jar CartsSimulation-1.0-SNAPSHOT.jar
 
 
 
